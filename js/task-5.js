@@ -4,8 +4,10 @@ const spn = document.querySelector('.color');
 btn.addEventListener('click', handlerBtn);
 
 function handlerBtn() {
-  document.body.style.backgroundColor = getRandomHexColor();
-  spn.textContent = getRandomHexColor();
+  const result = getRandomHexColor();
+  document.body.style.backgroundColor = result;
+  spn.textContent = result;
+  console.log(result);
 }
 
 function getRandomHexColor() {

@@ -10,13 +10,6 @@ const btnDestroy = document.querySelector('[data-destroy]');
 
 btnCreate.addEventListener('click', handlerClick);
 btnDestroy.addEventListener('click', destroyBoxes);
-document.addEventListener('keydown', handlerKey);
-
-function handlerKey(evt) {
-  if (evt.code === 'Enter') {
-    handlerClick();
-  }
-}
 
 function handlerClick() {
   const amount = parseInt(input.value);
@@ -33,9 +26,10 @@ function createBoxes(amount) {
   boxDiv.innerHTML = '';
 
   let size = 30;
+  let divElem = '';
 
   for (let i = 0; i < amount; i += 1) {
-    const divElem = `
+    divElem += `
     <div style="
     width: ${size}px;
     height: ${size}px;
@@ -43,8 +37,8 @@ function createBoxes(amount) {
     "> </div>
     `;
     size += 10;
-    boxDiv.insertAdjacentHTML('beforeend', divElem);
   }
+  boxDiv.insertAdjacentHTML('beforeend', divElem);
 }
 
 function destroyBoxes() {
