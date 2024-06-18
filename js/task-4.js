@@ -9,10 +9,9 @@ function handlerForm(evt) {
     alert('All form fields must be filled in');
     return;
   }
-  const data = {
-    email: email.value.trim(),
-    password: password.value.trim(),
-  };
+  const data = {};
+  data[email.name] = email.value.trim();
+  data[password.name] = password.value.trim();
 
   console.log(data);
 
