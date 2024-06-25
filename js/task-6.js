@@ -12,10 +12,10 @@ btnCreate.addEventListener('click', handlerClick);
 btnDestroy.addEventListener('click', destroyBoxes);
 
 function handlerClick() {
-  const amount = parseInt(input.value);
-  if (amount > 0 && amount <= 100) {
+  const valueInp = parseInt(input.value);
+  if (valueInp > 0 && valueInp <= 100) {
     input.value = '';
-    createBoxes(amount);
+    createBoxes(valueInp);
   } else {
     alert('You have to choose number between 1 and 100');
   }
